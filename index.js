@@ -50,14 +50,7 @@ app.use((err, req, res, next) => {
             message: err.message,
             errors: err.errors,
         });
-    } else {
-        console.log("error is : ",err)
-        res.status(500).json({
-            success: false,
-            message: "Int Error",
-            errors: [],
-        });
-    }
+    } 
 });
 
 
