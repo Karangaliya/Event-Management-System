@@ -15,7 +15,7 @@ const port = process.env.PORT || 3000
 
 const app = express()
 
-
+const __dirname = path.resolve();
 
 connectDB()
 .then(()=>{
@@ -32,7 +32,6 @@ app.use(express.static("public"))
 app.use(cookieParser())
 app.use(cors());
 
-const __dirname = path.resolve();
 
 app.use("/api/v1/users",userRouter)
 app.use("/api/v1/company",companyRouter)
