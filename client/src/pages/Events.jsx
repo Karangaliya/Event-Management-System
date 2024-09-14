@@ -60,7 +60,7 @@ function Events() {
     useEffect(() => {
 
         const fetchEvents = async () => {
-            axios.get('https://event-management-system-backend-n47r.onrender.com/api/v1/users/getAllEvent')
+            axios.get('/api/v1/users/getAllEvent')
                 .then(function (response) {
                     setCards(response.data.data);
                 })
@@ -149,7 +149,7 @@ function Events() {
             if (ccity == "all") {
                 setCity(null);
             }
-            axios.get('https://event-management-system-backend-n47r.onrender.com/api/v1/users/getAllEvent', {
+            axios.get('/api/v1/users/getAllEvent', {
                 params: {
                     city: ccity
                 }

@@ -6,7 +6,7 @@ export default defineConfig({
   server:{
     proxy:{
       '/api': {
-        target: 'https://event-management-system-backend-n47r.onrender.com',
+        target: 'http://localhost:5000',
         secure: false
       }
     },

@@ -21,7 +21,7 @@ function Dashboard() {
   
   const handleLogOut = () => {
     if (currentUser) {
-      axios.post("https://event-management-system-backend-n47r.onrender.com/api/v1/users/logout")
+      axios.post("/api/v1/users/logout")
         .then(function (response) {
           mode === "dark" ? toast.success(response.data.data, {
             position: "top-right",

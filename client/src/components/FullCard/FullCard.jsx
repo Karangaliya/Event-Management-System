@@ -30,7 +30,7 @@ function FullCard() {
             console.log("Event Id is not there");
         }
         if (currentUser) {
-            axios.get(`https://event-management-system-backend-n47r.onrender.com/api/v1/users/getSingleEvent/${eventId}`)
+            axios.get(`/api/v1/users/getSingleEvent/${eventId}`)
                 .then(function (response) {
                     setEvent(response.data.data);
                 })
@@ -81,7 +81,7 @@ function FullCard() {
                         });
                     }
                 })
-            axios.get(`https://event-management-system-backend-n47r.onrender.com/api/v1/users/checkVolApplied/${eventId}`)
+            axios.get(`/api/v1/users/checkVolApplied/${eventId}`)
                 .then(function (response) {
                     setCheck(response.data.data);
                 })
@@ -133,7 +133,7 @@ function FullCard() {
                     }
                 })
         } else {
-            axios.get(`https://event-management-system-backend-n47r.onrender.com/api/v1/company/getSingleEvent/${eventId}`)
+            axios.get(`/api/v1/company/getSingleEvent/${eventId}`)
                 .then(function (response) {
                     setEvent(response.data.data);
                 })
@@ -212,7 +212,7 @@ function FullCard() {
                 theme: "light"
             });
         } else {
-            axios.put(`https://event-management-system-backend-n47r.onrender.com/api/v1/users/applyInEvent/${event._id}`, {
+            axios.put(`/api/v1/users/applyInEvent/${event._id}`, {
                 mobileNumber
             })
                 .then(function (response) {
@@ -290,7 +290,7 @@ function FullCard() {
     }
 
     const handleDelete = ()=>{
-        axios.get(`https://event-management-system-backend-n47r.onrender.com/api/v1/users/deleteEvent/${eventId}`)
+        axios.get(`/api/v1/users/deleteEvent/${eventId}`)
                 .then(function (response) {
                     mode === "dark" ? toast.success(response.data.message, {
                         position: "top-right",
@@ -363,7 +363,7 @@ function FullCard() {
     }
 
     const handleCancel = ()=>{
-        axios.put(`https://event-management-system-backend-n47r.onrender.com/api/v1/users/cancelApplication/${eventId}`)
+        axios.put(`/api/v1/users/cancelApplication/${eventId}`)
         .then(function (response){
             mode==="dark"? toast.success(response.data.message, {
                 position: "top-right",

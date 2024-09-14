@@ -17,7 +17,7 @@ const AppliedVolenteers = () => {
     const [ev,setEv] = useState();
 
     useEffect(() => {
-        axios.get(`https://event-management-system-backend-n47r.onrender.com/api/v1/company/getSingleEvent/${eventId}`)
+        axios.get(`/api/v1/company/getSingleEvent/${eventId}`)
         .then(function (response) {
             setVolenteers(response.data.data.AppliedVol);
         })
@@ -72,7 +72,7 @@ const AppliedVolenteers = () => {
 
 
     useEffect(() => {
-        axios.get(`https://event-management-system-backend-n47r.onrender.com/api/v1/company/getSingleEvent/${eventId}`)
+        axios.get(`/api/v1/company/getSingleEvent/${eventId}`)
         .then(function (response) {
             setVolenteers(response.data.data.AppliedVol);
             setEv('');
@@ -129,7 +129,7 @@ const AppliedVolenteers = () => {
 
 
     const handleReject = (rejectId) => {
-        axios.put(`https://event-management-system-backend-n47r.onrender.com/api/v1/company/rejectVolenteer/${eventId}`,{
+        axios.put(`/api/v1/company/rejectVolenteer/${eventId}`,{
             rejectId
         })
         .then(function (response) {

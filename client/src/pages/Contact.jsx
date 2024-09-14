@@ -21,7 +21,7 @@ function Contact() {
     const handleSubmit = (e) =>{
         e.preventDefault();
         currentUser ? idd = currentUser._id : idd = currentCompany._id;
-        axios.post(`https://event-management-system-backend-n47r.onrender.com/api/v1/question/createQue/${idd}`,{
+        axios.post(`/api/v1/question/createQue/${idd}`,{
             data
         })
         .then(function(response){

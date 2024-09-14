@@ -10,7 +10,7 @@ function DashCom() {
 
     useEffect(() => {
         const fetchCompany = ()=>{
-            axios.get("https://event-management-system-backend-n47r.onrender.com/api/v1/company/getCompanys",{
+            axios.get("/api/v1/company/getCompanys",{
                 params:{
                     limit:10
                 }

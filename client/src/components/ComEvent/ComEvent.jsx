@@ -67,7 +67,7 @@ function ComEvent() {
         if (!eventId){
             console.log("Event Id is Not Given");
         }
-        axios.get(`https://event-management-system-backend-n47r.onrender.com/api/v1/company/getSingleEvent/${eventId}`)
+        axios.get(`/api/v1/company/getSingleEvent/${eventId}`)
                 .then(function (response) {
                     setEvent(response.data.data);
                 })
@@ -141,7 +141,7 @@ function ComEvent() {
         setLoading(true)
         if (currentCompany) {
             if (imageFile != null){
-                axios.put(`https://event-management-system-backend-n47r.onrender.com/api/v1/company/updateImage/${eventId}`, {
+                axios.put(`/api/v1/company/updateImage/${eventId}`, {
                     imageFile
                 }, {
                     headers: {
@@ -230,7 +230,7 @@ function ComEvent() {
                     })
             }
             if(Object.keys(data).length !== 0){
-            axios.put(`https://event-management-system-backend-n47r.onrender.com/api/v1/company/updateEvent/${eventId}`, {
+            axios.put(`/api/v1/company/updateEvent/${eventId}`, {
                 data
             })
                 .then(function (response) {

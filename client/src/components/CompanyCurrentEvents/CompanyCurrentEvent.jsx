@@ -17,7 +17,7 @@ function CompanyCurrentEvents() {
 
     useEffect(() => {
         const fetchEvents = async () => {
-            axios.get(`https://event-management-system-backend-n47r.onrender.com/api/v1/company/companyCurrentEvents/${currentCompany._id}`)
+            axios.get(`/api/v1/company/companyCurrentEvents/${currentCompany._id}`)
                 .then(function (response) {
                     setCards(response.data.data);
                 })

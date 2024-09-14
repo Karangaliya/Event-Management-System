@@ -51,7 +51,7 @@ function Profile() {
     if (currentUser) {
       dispatch(updateInStart());
       if (imageFile != null) {
-        axios.put("https://event-management-system-backend-n47r.onrender.com/api/v1/users/profileImage", {
+        axios.put("/api/v1/users/profileImage", {
           profileImage: imageFile
         }, {
           headers: {
@@ -138,7 +138,7 @@ function Profile() {
           })
       }
       if (data) {
-        axios.put(`https://event-management-system-backend-n47r.onrender.com/api/v1/users/updateDetail/${currentUser._id}`, {
+        axios.put(`/api/v1/users/updateDetail/${currentUser._id}`, {
           data
         })
           .then(function (response) {
@@ -220,7 +220,7 @@ function Profile() {
     else {
       dispatch(cupdateInStart());
       if (imageFile != null) {
-        axios.put("https://event-management-system-backend-n47r.onrender.com/api/v1/company/profileImage", {
+        axios.put("/api/v1/company/profileImage", {
           profileImage: imageFile
         }, {
           headers: {
@@ -306,7 +306,7 @@ function Profile() {
           })
       }
       if (data) {
-        axios.put(`https://event-management-system-backend-n47r.onrender.com/api/v1/company/updateDetail/${currentCompany._id}`, {
+        axios.put(`/api/v1/company/updateDetail/${currentCompany._id}`, {
           data
         })
           .then(function (response) {
@@ -403,7 +403,7 @@ function Profile() {
           icon: "success"
         });
         if (currentUser) {
-          axios.delete(`https://event-management-system-backend-n47r.onrender.com/api/v1/users/deleteVol/${currentUser._id}`)
+          axios.delete(`/api/v1/users/deleteVol/${currentUser._id}`)
             .then(function (response) {
               mode === "dark" ? toast.success(response.data.data, {
                 position: "top-right",
@@ -473,7 +473,7 @@ function Profile() {
               }
             })
         } else {
-          axios.delete(`https://event-management-system-backend-n47r.onrender.com/api/v1/company/deleteCom/${currentCompany._id}`)
+          axios.delete(`/api/v1/company/deleteCom/${currentCompany._id}`)
             .then(function (response) {
               mode === "dark" ? toast.success(response.data.data, {
                 position: "top-right",

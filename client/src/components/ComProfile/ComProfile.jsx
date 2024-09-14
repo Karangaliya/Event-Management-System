@@ -25,7 +25,7 @@ function ComProfile() {
     if (!companyId) {
       console.log("CompanyId is not there")
     }
-    axios.get(`https://event-management-system-backend-n47r.onrender.com/api/v1/company/${companyId}`)
+    axios.get(`/api/v1/company/${companyId}`)
       .then(function (response) {
         setVol(response.data.data);
       })
@@ -95,7 +95,7 @@ function ComProfile() {
     e.preventDefault();
     if (data) {
       setSubloading(true)
-      axios.put(`https://event-management-system-backend-n47r.onrender.com/api/v1/company/updateDetailByAdmin/${currentUser._id}`, {
+      axios.put(`/api/v1/company/updateDetailByAdmin/${currentUser._id}`, {
         data
       })
         .then(function (response) {
@@ -189,7 +189,7 @@ function ComProfile() {
           icon: "success"
         });
           setDelloading(true)
-          axios.delete(`https://event-management-system-backend-n47r.onrender.com/api/v1/company/deleteComByAdmin/${vol._id}`)
+          axios.delete(`/api/v1/company/deleteComByAdmin/${vol._id}`)
             .then(function (response) {
               mode === "dark" ? toast.success(response.data.data, {
                 position: "top-right",

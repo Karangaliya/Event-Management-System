@@ -17,7 +17,7 @@ function ManageEvent() {
 
     useEffect(() => {
         const fetchEvents = async () => {
-            axios.get(`https://event-management-system-backend-n47r.onrender.com/api/v1/users/getAllEvent`)
+            axios.get(`/api/v1/users/getAllEvent`)
                 .then(function (response) {
                     setCards(response.data.data);
                 })

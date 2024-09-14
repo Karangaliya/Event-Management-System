@@ -9,7 +9,7 @@ import { ApiError } from "./utils/Error.js"
 import path from "path"
 import cors from 'cors';
 dotenv.config({
-    path: '../.env'
+    path: '.env'
 })
 const port = process.env.PORT || 3000
 
@@ -25,6 +25,8 @@ connectDB()
     console.log("Connection failed =>",error);
 });
 
+const __dirname = path.resolve();
+
 app.use(express.json({limit: "16kb"}))
 app.use(express.urlencoded({extended: true, limit: "16kb"}))
 app.use(express.static("public"))
@@ -35,18 +37,11 @@ app.use("/api/v1/users",userRouter)
 app.use("/api/v1/company",companyRouter)
 app.use("/api/v1/question",questionRouter)
 
-if ( process.env.NODE_ENV == "production"){
+app.use(express.static(path.join(__dirname, 'client/dist')));
 
-    app.use(express.static("client/dist"));
-
-    app.get("*", (req, res) => {
-
-        res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
-
-    })
-
-
-}
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+});
 
 app.use((err, req, res, next) => {
     if (err instanceof ApiError) {

@@ -132,7 +132,7 @@ function CreateEvent() {
         }
         setLoading(true)
         if (currentCompany) {
-            axios.post("https://event-management-system-backend-n47r.onrender.com/api/v1/company/createEvent", {
+            axios.post("/api/v1/company/createEvent", {
                 data,
                 imageFile
             }, {
@@ -221,7 +221,7 @@ function CreateEvent() {
                     }
                 })
         } else {
-            axios.post("https://event-management-system-backend-n47r.onrender.com/api/v1/users/createEvent", {
+            axios.post("/api/v1/users/createEvent", {
                 data,
                 imageFile
             }, {

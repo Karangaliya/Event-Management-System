@@ -25,7 +25,7 @@ function VolProfile() {
     if (!userId) {
       console.log("UserId is not there")
     }
-    axios.get(`https://event-management-system-backend-n47r.onrender.com/api/v1/users/${userId}`)
+    axios.get(`/api/v1/users/${userId}`)
       .then(function (response) {
         setVol(response.data.data);
       })
@@ -96,7 +96,7 @@ function VolProfile() {
     e.preventDefault();
     if (data) {
       setSubloading(true);
-      axios.put(`https://event-management-system-backend-n47r.onrender.com/api/v1/users/updateDetail/${currentUser._id}`, {
+      axios.put(`/api/v1/users/updateDetail/${currentUser._id}`, {
         data
       })
         .then(function (response) {
@@ -192,7 +192,7 @@ function VolProfile() {
           icon: "success"
         });
           setDelloading(true)
-          axios.delete(`https://event-management-system-backend-n47r.onrender.com/api/v1/users/deleteVol/${vol._id}`)
+          axios.delete(`/api/v1/users/deleteVol/${vol._id}`)
             .then(function (response) {
               mode === "dark" ? toast.success(response.data.data, {
                 position: "top-right",

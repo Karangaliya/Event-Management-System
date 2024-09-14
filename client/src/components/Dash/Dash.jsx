@@ -18,7 +18,7 @@ function Dash() {
 
     useEffect(() => {
         const fetchVolenteer = () => {
-            axios.get("https://event-management-system-backend-n47r.onrender.com/api/v1/users/getVolenteers", {
+            axios.get("/api/v1/users/getVolenteers", {
                 params: {
                     limit: 7,
                 }
@@ -50,7 +50,7 @@ function Dash() {
                 })
         }
         const fetchCompany = () => {
-            axios.get("https://event-management-system-backend-n47r.onrender.com/api/v1/company/getCompanys", {
+            axios.get("/api/v1/company/getCompanys", {
                 params: {
                     limit: 7,
                 }
@@ -82,7 +82,7 @@ function Dash() {
                 })
         }
         const fetchEvent = () => {
-            axios.get("https://event-management-system-backend-n47r.onrender.com/api/v1/users/getAllEvent")
+            axios.get("/api/v1/users/getAllEvent")
                 .then(function (response) {
                     console.log(response)
                     setEvent(response.data.data);

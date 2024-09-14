@@ -12,7 +12,7 @@ function DashVol() {
 
     useEffect(() => {
         const fetchVolenteers = () => {
-            axios.get("https://event-management-system-backend-n47r.onrender.com/api/v1/users/getVolenteers", {
+            axios.get("/api/v1/users/getVolenteers", {
                 params: {
                     limit: 10
                 }

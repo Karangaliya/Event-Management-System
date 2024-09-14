@@ -131,7 +131,7 @@ function Register() {
         try {
             if (isVolenteer){
                 setLoading(true);
-                axios.post("https://event-management-system-backend-n47r.onrender.com/api/v1/users/register",{
+                axios.post("/api/v1/users/register",{
                     username : data.username,
                     email : data.email,
                     password : data.password,
@@ -190,7 +190,7 @@ function Register() {
                 })
             }else{
                 setLoading(true)
-                axios.post("https://event-management-system-backend-n47r.onrender.com/api/v1/company/register",{
+                axios.post("/api/v1/company/register",{
                     username : data.username,
                     email : data.email,
                     password : data.password,

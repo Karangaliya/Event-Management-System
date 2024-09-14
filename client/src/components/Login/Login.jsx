@@ -65,7 +65,7 @@ function Login() {
         try {
             if (isVolenteer) {
                 dispatch(loginInStart());
-                axios.post("https://event-management-system-backend-n47r.onrender.com/api/v1/users/login", {
+                axios.post("/api/v1/users/login", {
                     username: data.username,
                     email: data.email,
                     password: data.password
@@ -123,7 +123,7 @@ function Login() {
                 })
             } else {
                 dispatch(cloginInStart());
-                axios.post("https://event-management-system-backend-n47r.onrender.com/api/v1/company/login", {
+                axios.post("/api/v1/company/login", {
                     username: data.username,
                     email: data.email,
                     password: data.password
