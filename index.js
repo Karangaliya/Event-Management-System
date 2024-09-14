@@ -31,22 +31,17 @@ app.use(express.static("public"))
 app.use(cookieParser())
 app.use(cors());
 
+const __dirname = path.resolve();
+
 app.use("/api/v1/users",userRouter)
 app.use("/api/v1/company",companyRouter)
 app.use("/api/v1/question",questionRouter)
 
-if ( process.env.NODE_ENV == "production"){
+app.use(express.static(path.join(__dirname, 'client/dist')));
 
-    app.use(express.static("client/dist"));
-
-    app.get("*", (req, res) => {
-
-        res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
-
-    })
-
-
-}
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+});
 
 app.use((err, req, res, next) => {
     if (err instanceof ApiError) {
