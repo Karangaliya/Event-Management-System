@@ -67,7 +67,7 @@ function Dashboard() {
           });
         })
     } else {
-      axios.post("api/v1/company/logout")
+      axios.post("/api/v1/company/logout")
         .then(function (response) {
           mode === "dark" ? toast.success(response.data.data, {
             position: "top-right",
